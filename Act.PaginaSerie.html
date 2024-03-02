@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunter x Hunter</title>
+    <link rel="stylesheet" href="Act.paginaSerie.css">
+    <style>
+        .container{
+            text-align: center;
+        }
+        .opciones{
+            background-color:cadetblue;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .color-opcion{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="text">
+            <p id="parrafo">Gon<br> Gon Freecss es un niño de 12 años que desea convertirse en un cazador como su padre, todo esto mientras emprende una ardua búsqueda para encontrar a su padre, el legendario cazador Ging Freecss. Gon es un chico optimista, con capacidades excelentes para conseguir su objetivo, puesto que cuenta con extraordinarios sentidos que le hacen más fácil esta misión, como un extraordinario sentido del olfato y también del oído, un instinto agudo, y una innata comprensión con los animales.</p>
+        </div>
+        <img id="cambiar-personaje" width="500" src="personaje_verde.jpeg" alt="">
+    </div>
+    <div class="container">
+        <hr>
+        <div class="opciones">
+            <img class="color-opcion" src="personaje_verde.jpeg" onclick="cambiarColorA('verde')" alt="">
+            <img class="color-opcion" src="personaje_azul.jpeg" onclick="cambiarColorA('azul')" alt="">
+            <img class="color-opcion" src="personaje_amarillo.jpeg" onclick="cambiarColorA('amarillo')" alt="">
+            <img class="color-opcion" src="personaje_blanco.jpeg" onclick="cambiarColorA('blanco')" alt="">
+        </div>
+    </div>
+    <script>
+        function cambiarColorA(color){
+            document.getElementById("cambiar-personaje").src =
+            "personaje_"+color+".jpeg"
+
+            const imagen = document.getElementById("cambiar-personaje");
+            const texto = document.getElementById("parrafo");
+
+            if(imagen.src.endsWith("personaje_verde.jpeg") ){
+                texto.innerHTML = "<p>Gon<br> Gon Freecss es un niño de 12 años que desea convertirse en un cazador como su padre, todo esto mientras emprende una ardua búsqueda para encontrar a su padre, el legendario cazador Ging Freecss. Gon es un chico optimista, con capacidades excelentes para conseguir su objetivo, puesto que cuenta con extraordinarios sentidos que le hacen más fácil esta misión, como un extraordinario sentido del olfato y también del oído, un instinto agudo, y una innata comprensión con los animales.</p>";
+            }
+            if(imagen.src.endsWith("personaje_azul.jpeg") ){
+                texto.innerHTML = "<p>Leorio<br> es un cazadores novato y actualmente es estudiante de medicina, así como un miembro de los zodiacos con el nombre en clave jabali (en reemplazo de Gin). Él es parte de la División de Ciencia, creada en preparación para el viaje al Continente Oscuro.</p>";
+            }
+            if(imagen.src.endsWith("personaje_amarillo.jpeg") ){
+                texto.innerHTML = "<p>Kurapika<br> (クラピカ, Kurapika) es uno de los cuatro protagonistas principales de la serie Hunter x Hunter. Busca venganza por su sangriento pasado. Sus ojos brillan en un hermoso y codiciado escarlata al experimentar emociones intensas. Él es el actual líder de la organización fundada por Neon Nostrade, así como un cazador de listas negras y un miembro de los zodiacos con el nombre en clave Rata. Además, él es parte de la División de Inteligencia, creado en preparación para el viaje al Continente Oscuro.</p>";
+            }
+            if(imagen.src.endsWith("personaje_blanco.jpeg") ){
+                texto.innerHTML = "<p>Killua<br> nació como el tercer hijo de una familia de asesinos conocidos, la Familia Zoldyck. Mostrado muy prometedor desde el nacimiento, Killua ha logrado dominar muchas técnicas de matar desde temprana edad, y está dispuesto a convertirse en uno de los mejores asesinos que la familia haya producido.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

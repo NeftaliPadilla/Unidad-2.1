@@ -1,0 +1,12 @@
+.cont{
+    display: flex;
+}
+.text{
+    margin-right: 10px;
+}
+#parrafo{
+    color:black;
+    font-weight: 30pt;
+    font-size: 20pt;
+    text-align: center;
+}

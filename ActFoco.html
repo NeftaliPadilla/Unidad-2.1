@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encender foco</title>
+    <style>
+        .container{
+            text-align: center;
+        }
+        #boton-foco{
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="imagen-foco" src="foco_negro.jpg" alt="">
+        <div>
+            <button id="boton-foco" class="encendido">¿Quieres prender el foco?</button>
+        </div>
+    </div>
+    <script>
+        const botonFoco = document.getElementById('boton-foco');
+        const imagenFoco = document.getElementById('imagen-foco');
+        
+        function cambiarFoco(){
+            if(imagenFoco.src.endsWith('foco_negro.jpg')){
+                imagenFoco.src = 'foco_amarillo.jpg';
+                botonFoco.textContent = '¿Quieres apagar el foco?';
+                botonFoco.classList.remove('encendido');
+                botonFoco.style.backgroundColor = 'yellow';
+            }else{
+                imagenFoco.src = 'foco_negro.jpg';
+                botonFoco.textContent = '¿Quieres prender el foco?';
+                botonFoco.classList.add('encendido');
+                botonFoco.style.backgroundColor = 'grey';
+            }
+        }
+        botonFoco.addEventListener('click',cambiarFoco);
+    </script>
+</body>
+</html>

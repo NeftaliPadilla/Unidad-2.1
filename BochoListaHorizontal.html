@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes en Lista Desordenada</title>
+    <style>
+        ul{
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        li{
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="imagenLista"></ul>
+
+    <script>
+        const imagenes =['bocho_rojo.jpg','bocho_blanco.jpg','bocho_azul.jpg','bocho_amarillo.jpg']
+
+        function cargarImages(){
+            const imagenLista = document.getElementById('imagenLista')
+            imagenes.forEach(url=>{
+                let li = document.createElement('li')
+                let img = document.createElement('img')
+                img.src = url
+                img.alt = 'Imagen'
+                img.style.width ='250px'
+                img.style.height = '250px'
+                li.appendChild(img)
+                imagenLista.appendChild(li)
+            });
+        }
+        window.addEventListener('load', cargarImages)
+    </script>
+</body>
+</html>
